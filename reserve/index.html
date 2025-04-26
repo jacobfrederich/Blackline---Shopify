@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reserve No. 9 - Blackline & Barrel</title>
+</head>
+<body>
+
+<h2 style="text-align:center;">Reserve No. 9</h2>
+
+<div id='product-component-reserve-balm'></div>
+<div id='product-component-reserve-oil'></div>
+<div id='product-component-reserve-bundle'></div>
+
+<script type="text/javascript">
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.head || document.body).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: '4x8bee-2b.myshopify.com',
+      storefrontAccessToken: 'd245697a91d8baa5f34a193580fbe8bc',
+    });
+
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '8935052738728',
+        node: document.getElementById('product-component-reserve-balm'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+      });
+      ui.createComponent('product', {
+        id: '8935052083368',
+        node: document.getElementById('product-component-reserve-oil'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+      });
+      ui.createComponent('product', {
+        id: '8935053295784',
+        node: document.getElementById('product-component-reserve-bundle'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+      });
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
