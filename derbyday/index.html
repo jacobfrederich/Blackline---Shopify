@@ -3,14 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Derby Day - Blackline & Barrel</title>
+  <style>
+    .product-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .product-row > div {
+      flex: 0 1 300px;
+    }
+  </style>
 </head>
 <body>
 
-<h2 style="text-align:center;">Derby Day</h2>
-
-<div id='product-component-derby-balm'></div>
-<div id='product-component-derby-oil'></div>
-<div id='product-component-derby-bundle'></div>
+<div class="product-row">
+  <div id='product-component-derby-balm'></div>
+  <div id='product-component-derby-oil'></div>
+  <div id='product-component-derby-bundle'></div>
+</div>
 
 <script type="text/javascript">
 (function () {
@@ -24,7 +36,6 @@
   } else {
     loadScript();
   }
-
   function loadScript() {
     var script = document.createElement('script');
     script.async = true;
@@ -32,33 +43,9 @@
     (document.head || document.body).appendChild(script);
     script.onload = ShopifyBuyInit;
   }
-
   function ShopifyBuyInit() {
     var client = ShopifyBuy.buildClient({
       domain: '4x8bee-2b.myshopify.com',
       storefrontAccessToken: 'd245697a91d8baa5f34a193580fbe8bc',
     });
-
-    ShopifyBuy.UI.onReady(client).then(function (ui) {
-      ui.createComponent('product', {
-        id: '8935056146600',
-        node: document.getElementById('product-component-derby-balm'),
-        moneyFormat: '%24%7B%7Bamount%7D%7D',
-      });
-      ui.createComponent('product', {
-        id: '8935055687848',
-        node: document.getElementById('product-component-derby-oil'),
-        moneyFormat: '%24%7B%7Bamount%7D%7D',
-      });
-      ui.createComponent('product', {
-        id: '8935056801960',
-        node: document.getElementById('product-component-derby-bundle'),
-        moneyFormat: '%24%7B%7Bamount%7D%7D',
-      });
-    });
-  }
-})();
-</script>
-
-</body>
-</html>
+    ShopifyBuy.UI.onReady(client).
