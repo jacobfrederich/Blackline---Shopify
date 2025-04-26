@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Commonwealth - Blackline & Barrel</title>
+</head>
+<body>
+
+<h2 style="text-align:center;">Commonwealth</h2>
+
+<div id='product-component-commonwealth-balm'></div>
+<div id='product-component-commonwealth-oil'></div>
+<div id='product-component-commonwealth-bundle'></div>
+
+<script type="text/javascript">
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.head || document.body).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: '4x8bee-2b.myshopify.com',
+      storefrontAccessToken: 'd245697a91d8baa5f34a193580fbe8bc',
+    });
+
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '8935057981608',
+        node: document.getElementById('product-component-commonwealth-balm'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+      });
+      ui.createComponent('product', {
+        id: '8935057490088',
+        node: document.getElementById('product-component-commonwealth-oil'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+      });
+      ui.createComponent('product', {
+        id: '8935058669736',
+        node: document.getElementById('product-component-commonwealth-bundle'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+      });
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
