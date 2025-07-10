@@ -19,9 +19,9 @@
 <body>
 
 <div class="product-row">
-  <div id='product-component-1752119635442'></div> <!-- Balm -->
-  <div id='product-component-1752119513184'></div> <!-- Oil -->
-  <div id='product-component-1752119751458'></div> <!-- Bundle -->
+  <div id='product-component-unbridledspirit-balm'></div>
+  <div id='product-component-unbridledspirit-oil'></div>
+  <div id='product-component-unbridledspirit-bundle'></div>
 </div>
 
 <script type="text/javascript">
@@ -50,22 +50,19 @@
     });
     ShopifyBuy.UI.onReady(client).then(function (ui) {
       ui.createComponent('product', {
-        id: '9045221834920', // Balm
-        node: document.getElementById('product-component-1752119635442'),
+        id: '9045221834920',
+        node: document.getElementById('product-component-unbridledspirit-balm'),
         moneyFormat: '%24%7B%7Bamount%7D%7D',
-        options: YOUR_OPTIONS_OBJECT_HERE
       });
       ui.createComponent('product', {
-        id: '9045220982952', // Oil
-        node: document.getElementById('product-component-1752119513184'),
+        id: '9045220982952',
+        node: document.getElementById('product-component-unbridledspirit-oil'),
         moneyFormat: '%24%7B%7Bamount%7D%7D',
-        options: YOUR_OPTIONS_OBJECT_HERE
       });
       ui.createComponent('product', {
-        id: '9045223538856', // Bundle
-        node: document.getElementById('product-component-1752119751458'),
+        id: '9045223538856',
+        node: document.getElementById('product-component-unbridledspirit-bundle'),
         moneyFormat: '%24%7B%7Bamount%7D%7D',
-        options: YOUR_OPTIONS_OBJECT_HERE
       });
     });
   }
