@@ -49,20 +49,117 @@
       storefrontAccessToken: 'd245697a91d8baa5f34a193580fbe8bc',
     });
     ShopifyBuy.UI.onReady(client).then(function (ui) {
+      const options = {
+        "product": {
+          "styles": {
+            "product": {
+              "@media (min-width: 601px)": {
+                "max-width": "calc(25% - 20px)",
+                "margin-left": "20px",
+                "margin-bottom": "50px"
+              }
+            },
+            "button": {
+              "font-family": "Geneva, sans-serif",
+              "font-size": "16px",
+              "padding-top": "16px",
+              "padding-bottom": "16px"
+            },
+            "quantityInput": {
+              "font-size": "16px",
+              "padding-top": "16px",
+              "padding-bottom": "16px"
+            }
+          },
+          "text": {
+            "button": "Add to cart"
+          }
+        },
+        "productSet": {
+          "styles": {
+            "products": {
+              "@media (min-width: 601px)": {
+                "margin-left": "-20px"
+              }
+            }
+          }
+        },
+        "modalProduct": {
+          "contents": {
+            "img": false,
+            "imgWithCarousel": true,
+            "button": false,
+            "buttonWithQuantity": true
+          },
+          "styles": {
+            "product": {
+              "@media (min-width: 601px)": {
+                "max-width": "100%",
+                "margin-left": "0px",
+                "margin-bottom": "0px"
+              }
+            },
+            "button": {
+              "font-family": "Geneva, sans-serif",
+              "font-size": "16px",
+              "padding-top": "16px",
+              "padding-bottom": "16px"
+            },
+            "quantityInput": {
+              "font-size": "16px",
+              "padding-top": "16px",
+              "padding-bottom": "16px"
+            }
+          },
+          "text": {
+            "button": "Add to cart"
+          }
+        },
+        "option": {},
+        "cart": {
+          "styles": {
+            "button": {
+              "font-family": "Geneva, sans-serif",
+              "font-size": "16px",
+              "padding-top": "16px",
+              "padding-bottom": "16px"
+            }
+          },
+          "text": {
+            "total": "Subtotal",
+            "button": "Checkout"
+          },
+          "popup": false
+        },
+        "toggle": {
+          "styles": {
+            "toggle": {
+              "font-family": "Geneva, sans-serif"
+            },
+            "count": {
+              "font-size": "16px"
+            }
+          }
+        }
+      };
+
       ui.createComponent('product', {
         id: '9045221834920',
         node: document.getElementById('product-component-unbridledspirit-balm'),
         moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: options
       });
       ui.createComponent('product', {
         id: '9045220982952',
         node: document.getElementById('product-component-unbridledspirit-oil'),
         moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: options
       });
       ui.createComponent('product', {
         id: '9045223538856',
         node: document.getElementById('product-component-unbridledspirit-bundle'),
         moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: options
       });
     });
   }
